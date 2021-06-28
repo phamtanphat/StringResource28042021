@@ -26,6 +26,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textViewTitle"
         android:layout_below="@id/linearContainerFlag"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
@@ -35,5 +36,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_title_login"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/textViewTitle"
+        android:id="@+id/textInputLayoutEmail"
+        app:startIconDrawable="@drawable/ic_email"
+        app:placeholderText="Example : abc@gmail.com"
+        app:placeholderTextColor="#CACACA"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:startIconDrawable="@drawable/ic_lock"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/textInputLayoutEmail"
+        android:id="@+id/textInputLayoutPassword"
+        app:placeholderText="At least 6 char"
+        app:placeholderTextColor="#CACACA"
+
+        app:passwordToggleEnabled="true"
+        app:passwordToggleDrawable="@drawable/bg_visible_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </RelativeLayout>
