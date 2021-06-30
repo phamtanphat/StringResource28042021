@@ -1,125 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearContainerFlag"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <data>
 
-        <androidx.cardview.widget.CardView
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="4dp"
-            app:cardBackgroundColor="#FFFFFF"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_width="50dp"
-            app:cardElevation="0dp"
-            android:layout_height="50dp">
+        <variable
+            name="mutable"
+            type="androidx.lifecycle.MutableLiveData&lt;com.example.stringresource28042021.LoginForm&gt;" />
+    </data>
 
-            <ImageView
-                android:id="@+id/imageLanguageVn"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_vietnam"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="#FFFFFF"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_width="50dp"
-            android:layout_height="50dp">
-            <ImageView
-                android:scaleType="fitXY"
-                android:id="@+id/imageLanguageEn"
-                android:src="@drawable/ic_united_states"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_below="@id/linearContainerFlag"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="true"
-        android:textColor="#f20"
-        android:textSize="28sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_title_login"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/textViewTitle"
-        android:id="@+id/textInputLayoutEmail"
-        app:startIconDrawable="@drawable/ic_email"
-        app:placeholderText="@string/placeholder_email"
-        app:placeholderTextColor="#CACACA"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditTextMail"
-            android:hint="@string/hint_email"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearContainerFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/imageLanguageVn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_vietnam" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/imageLanguageEn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_united_states" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearContainerFlag"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_title_login"
+            android:textAllCaps="true"
+            android:textColor="#f20"
+            android:textSize="28sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewTitle"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            app:placeholderText="@string/placeholder_email"
+            app:placeholderTextColor="#CACACA"
+            app:startIconDrawable="@drawable/ic_email">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email" />
 
-    <com.google.android.material.textfield.TextInputLayout
+        </com.google.android.material.textfield.TextInputLayout>
 
-        app:startIconDrawable="@drawable/ic_lock"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/textInputLayoutEmail"
-        android:id="@+id/textInputLayoutPassword"
-        app:placeholderText="@string/placeholder_password"
-        app:placeholderTextColor="#CACACA"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleDrawable="@drawable/bg_visible_password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:inputType="textPassword"
-            android:id="@+id/textInputEditTextPassword"
-            android:hint="@string/hint_password"
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/textInputLayoutPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutEmail"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            app:passwordToggleDrawable="@drawable/bg_visible_password"
+            app:passwordToggleEnabled="true"
+            app:placeholderText="@string/placeholder_password"
+            app:placeholderTextColor="#CACACA"
+            app:startIconDrawable="@drawable/ic_lock">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/buttonSignIn"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/textInputLayoutPassword"
-        android:text="@string/text_sign_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_marginTop="10dp"
-        android:textSize="15sp"
-        android:layout_marginStart="10dp"
-        android:id="@+id/textViewInfo"
-        android:layout_below="@id/buttonSignIn"
-        tools:text="Email : \nPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</RelativeLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:enabled="@{(mutable.email.length() > 6 &amp;&amp; mutable.password.length() > 6 ) ? true : false}"
+            android:text="@string/text_sign_in" />
+
+        <TextView
+            android:id="@+id/textViewInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonSignIn"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:text="@{mutable.email}" />
+    </RelativeLayout>
+</layout>
