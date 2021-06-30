@@ -13,16 +13,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:src="@drawable/ic_vietnam"
+        <androidx.cardview.widget.CardView
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="4dp"
+            app:cardBackgroundColor="#FFFFFF"
+            android:foreground="?android:attr/selectableItemBackground"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"/>
-        <ImageView
+            app:cardElevation="0dp"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/imageLanguageVn"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_vietnam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_united_states"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFFFFF"
+            android:foreground="?android:attr/selectableItemBackground"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="50dp">
+            <ImageView
+                android:scaleType="fitXY"
+                android:id="@+id/imageLanguageEn"
+                android:src="@drawable/ic_united_states"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <TextView
@@ -32,7 +58,7 @@
         android:layout_centerHorizontal="true"
         android:textAllCaps="true"
         android:textColor="#f20"
-        android:textSize="40sp"
+        android:textSize="28sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_title_login"/>
