@@ -20,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
         mBinding.buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Click", Toast.LENGTH_SHORT).show();
+                String email = mBinding.textInputEditTextMail.getText().toString();
+                String password = mBinding.textInputEditTextPassword.getText().toString();
+
+
+                String labelEmail = getResources().getString(R.string.hint_email);
+                String labelPassword = getResources().getString(R.string.hint_password);
+                mBinding.textViewInfo.setText(String.format("%s : %s \r\n%s : %s",labelEmail,email,labelPassword,password));
             }
         });
 
